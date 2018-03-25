@@ -11,5 +11,6 @@ RUN chmod +x /usr/local/bin/ecs
 RUN chmod +x /usr/local/bin/ecs
 
 ENV PATH "/root/.cargo/bin:$PATH"
+RUN chmod +x `which rg`
 
 USER jenkins
