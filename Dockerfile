@@ -9,10 +9,12 @@ RUN pip3 install awscli
 RUN curl -o /usr/local/bin/ecs https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-linux-amd64-latest
 RUN chmod +x /usr/local/bin/ecs
 
-USER jenkins
 
 RUN cargo install ripgrep
-RUN mv /var/jenkins_home/.cargo/bin/rg /usr/local/bin
-RUN rm -rf /var/jenkins_home/.cargo
+RUN mv /root/.cargo/bin/rg /usr/local/bin/
+RUN chmox +x /usr/local/bin/rg
+RUN rm -rf /root/.cargo
+
+USER jenkins
 
 # /var/jenkins_home is defined as volume
