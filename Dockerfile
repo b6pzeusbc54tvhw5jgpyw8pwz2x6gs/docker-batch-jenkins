@@ -12,7 +12,7 @@ RUN chmod +x /usr/local/bin/ecs
 
 RUN cargo install ripgrep
 RUN mv /root/.cargo/bin/rg /usr/local/bin/
-RUN chmox +x /usr/local/bin/rg
+RUN chmod +x /usr/local/bin/rg
 RUN rm -rf /root/.cargo
 
 USER jenkins
